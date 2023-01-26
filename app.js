@@ -26,3 +26,18 @@ export function caesarCipher(string, key) {
 
     return cypherString;
 }
+
+export function analyz(array) {
+    let object = {};
+    // average 
+    object.average = array.reduce((sum , value)=> sum + value,0)/array.length;
+    //min 
+    object.min = Math.min(...array);
+    //max
+    object.max = Math.max(...array);
+    //length
+    object.length = array.length;
+
+    return object;
+
+}
