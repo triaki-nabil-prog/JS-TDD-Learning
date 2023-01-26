@@ -15,3 +15,14 @@ export const calc = {
     div: (a, b) => { return a / b; },
     mul: (a, b) => { return a * b; },
 }
+
+export function caesarCipher(string, key) {
+    let cypherString = "";
+    const reg = /[a-z]/;
+    for (let i = 0; i < string.length; i++) {
+        if (reg.test(string.charAt(i))) { cypherString += String.fromCharCode((string.charCodeAt(i) - 97 + key) % 26 + 97); }
+        else cypherString += string.charAt(i);
+    }
+
+    return cypherString;
+}
